@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="estilo.css">
+
+    <title>Memory Horror</title>
+</head>
+
+<body>
+
+    <!-- Efeito de vinheta -->
+    <div class="vignette"></div>
+
+    <!-- Tela inicial -->
+    <section id="startScreen" class="screen">
+
+        <div class="horror-title">
+            <span>MEMORY</span>
+            <strong>HORROR</strong>
+        </div>
+
+        <p class="subtitle">
+            Você consegue encontrar todos os pares?
+        </p>
+
+        <div class="warning">
+            ⚠️ NÃO OLHE PARA TRÁS...
+        </div>
+
+        <div class="difficulty-box">
+
+            <h2>Escolha a dificuldade</h2>
+
+            <div class="difficulty-buttons">
+
+                <button class="difficulty active" data-level="easy">
+                    <span>😈</span>
+                    <strong>FÁCIL</strong>
+                    <small>8 pares</small>
+                </button>
+
+                <button class="difficulty" data-level="normal">
+                    <span>☠️</span>
+                    <strong>NORMAL</strong>
+                    <small>10 pares</small>
+                </button>
+
+                <button class="difficulty" data-level="nightmare">
+                    <span>💀</span>
+                    <strong>PESADELO</strong>
+                    <small>15 pares</small>
+                </button>
+
+            </div>
+
+        </div>
+
+        <button id="startButton" class="main-button">
+            ENTRAR NO JOGO
+        </button>
+
+        <p class="warning-small">
+            Recomendado jogar com fones de ouvido...
+        </p>
+
+    </section>
+
+
+    <!-- Jogo -->
+    <main id="game" class="hidden">
+
+        <header id="gameHeader">
+
+            <div class="title-container">
+                <h1>☠ MEMORY HORROR ☠</h1>
+                <p id="levelName">NORMAL</p>
+            </div>
+
+            <div id="gameInfo">
+
+                <div class="info">
+                    <span>⏱ TEMPO</span>
+                    <strong id="timer">00:00</strong>
+                </div>
+
+                <div class="info">
+                    <span>🎯 TENTATIVAS</span>
+                    <strong id="moves">0</strong>
+                </div>
+
+                <div class="info">
+                    <span>☠ PARES</span>
+                    <strong>
+                        <span id="pairs">0</span>
+                        /
+                        <span id="totalPairs">10</span>
+                    </strong>
+                </div>
+
+                <div class="info">
+                    <span>🏆 PONTOS</span>
+                    <strong id="score">0</strong>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- Mensagem de suspense -->
+        <div id="horrorMessage"></div>
+
+
+        <!-- Tabuleiro -->
+        <section id="gameBoard"></section>
+
+
+        <!-- Controles -->
+        <div class="game-controls">
+
+            <button id="restart">
+                🔄 RECOMEÇAR
+            </button>
+
+            <button id="backToMenu">
+                ☠ MENU
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <!-- Tela de vitória -->
+    <section id="gameOver" class="screen hidden">
+
+        <div class="victory-glitch">
+            VOCÊ SOBREVIVEU
+        </div>
+
+        <div class="skull">
+            ☠
+        </div>
+
+        <h2>O JOGO TERMINOU</h2>
+
+        <p>
+            Você encontrou todos os pares.
+        </p>
+
+        <div class="final-stats">
+
+            <div>
+                <span>Tempo</span>
+                <strong id="finalTime">00:00</strong>
+            </div>
+
+            <div>
+                <span>Tentativas</span>
+                <strong id="finalMoves">0</strong>
+            </div>
+
+            <div>
+                <span>Pontuação</span>
+                <strong id="finalScore">0</strong>
+            </div>
+
+        </div>
+
+        <p id="bestScoreText"></p>
+
+        <div class="end-buttons">
+
+            <button id="playAgain">
+                🔄 JOGAR NOVAMENTE
+            </button>
+
+            <button id="returnMenu">
+                ☠ VOLTAR AO MENU
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Elemento utilizado pelos sustos -->
+    <div id="jumpScare"></div>
+
+
+    <script src="game.js"></script>
+    <script src="estr.js"></script>
+
+</body>
+</html>
